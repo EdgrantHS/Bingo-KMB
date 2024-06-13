@@ -126,10 +126,14 @@ export default function App() {
     setBingoCount(count);
     return count;
   }
+
   useEffect(() => {
     console.log(countBingo(selectedState));
     if (countBingo(selectedState) >= 3) {
+      setBingoCount(3);
+      setTimeout(() => {
       alert("BINGO!");
+      }, 100);
     }
   }, [selectedState]);
 
