@@ -80,6 +80,50 @@ export default function App() {
   const [selectedState, setSelectedState] = useState(selected);
   const [bingoCount, setBingoCount] = useState(0);
   const [squareCount, setSquareCount] = useState(0);
+  const [nama, setNama] = useState([
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+  ]);
+
+  // useEffect(() => {
+  //   localStorage.setItem("selected", JSON.stringify(selectedState));
+  //   localStorage.setItem("nama", JSON.stringify(nama));
+  // }, [selectedState, nama]);
+
+  // useEffect(() => {
+  //   const selected = localStorage.getItem("selected");
+  //   const nama = localStorage.getItem("nama");
+
+  //   if (selected) {
+  //     setSelectedState(JSON.parse(selected));
+  //   }
+  //   if (nama) {
+  //     setNama(JSON.parse(nama));
+  //   }
+  // }, []);
 
   function countBingo(selected: boolean[][]): number {
     let count = 0;
@@ -132,7 +176,7 @@ export default function App() {
     if (countBingo(selectedState) >= 3) {
       setBingoCount(3);
       setTimeout(() => {
-      alert("BINGO!");
+        alert("BINGO!");
       }, 100);
     }
   }, [selectedState]);
@@ -148,6 +192,12 @@ export default function App() {
     });
     setSquareCount(count);
   }, [selectedState]);
+
+  const handleNama = (index: number, value: string) => {
+    const updatedNama = [...nama]; // Copy the current `nama` state
+    updatedNama[index] = value; // Update the value at the specified index
+    setNama(updatedNama); // Set the new `nama` state
+  };
 
   const handleSelected = (row: number, box: number) => {
     console.log(row, box);
@@ -211,8 +261,19 @@ export default function App() {
         '>
           <ol>
             {pertanyaan.map((pertanyaan, index) => (
-              <li key={index} className='text-left mb-2'>
-                {index + 1}. {pertanyaan}
+              <li key={index} className='text-left mb-4'>
+                {index + 1}.
+                <label htmlFor={index + " nama"}>{pertanyaan}</label>
+                <br />
+                <input
+                  type='text'
+                  id={index + " nama"}
+                  name={index + " nama"}
+                  className='ml-2 border-2 border-blue-400 rounded-lg p-1 max-w-60 w-full mt-1'
+                  placeholder='Nama Orang'
+                  value={nama[index]}
+                  onChange={(e) => handleNama(index, e.target.value)}
+                />
               </li>
             ))}
           </ol>
