@@ -41,31 +41,35 @@ const bingoData = [
 ];
 
 const pertanyaan = [
-  "Mengikuti kelas lintas fakultas.",
-  "Berpartisipasi dalam kompetisi internasional.",
-  "Menjadi relawan dalam proyek lingkungan hidup.",
-  "Menjadi pembicara dalam seminar atau webinar.",
-  "Mengorganisir acara besar di luar universitas.",
-  "Melakukan ziarah ke situs Buddhis penting.",
-  "Berpartisipasi dalam upacara Vesak di tempat bersejarah.",
-  "Memiliki koleksi literatur Buddhis.",
-  "Menonton film dalam tiga bahasa berbeda dalam seminggu.",
-  "Berpartisipasi dalam acara pembersihan lingkungan lokal.",
-  "Menjadi sukarelawan kegiatan vihara.",
-  "Menulis artikel untuk jurnal akademik.",
-  "Menjadi mentor.",
-  "Belajar di luar negeri.",
-  "Memenangkan lomba menulis.",
-  "Berpartisipasi dalam proyek penelitian ilmiah.",
-  "Menjadi kepala dalam acara.",
-  "Mengikuti kursus online tentang topik baru.",
-  "Masuk ke dalam gedung perusahaan ternama.",
-  "Melakukan kegiatan amal untuk masyarakat.",
-  "Menjadi bagian dari tim olahraga dan mengikuti lomba.",
-  "Pergi ke vihara di luar negeri.",
-  "Belajar alat musik baru dalam sebulan.",
-  "Menginap di tempat bersejarah atau unik (seperti kastil atau rumah pohon).",
-  "Menanam pohon atau berkebun di rumah.",
+  /*00*/ "Mengikuti kelas lintas fakultas.", 
+  /*01*/ "Pernah wirausaha.",
+  /*02*/ "Menjadi relawan dalam proyek lingkungan hidup.", 
+  /*03*/ "Menjadi pembicara dalam seminar atau webinar.", 
+  /*04*/ "Membaca buku satu hari selesai.",
+
+  /*10*/ "Melakukan ziarah ke situs Buddhis penting.", 
+  /*11*/ "Minggu ini pernah tidur lebih dari 9 jam.",
+  /*12*/ "Memiliki koleksi literatur Buddhis.", 
+  /*13*/ "Menonton film dalam tiga bahasa berbeda dalam seminggu.", 
+  /*14*/ "Berpartisipasi dalam acara pembersihan lingkungan lokal.", 
+
+  /*20*/ "Menjadi sukarelawan kegiatan vihara.", 
+  /*21*/ "Memakan makanan vegetarian selama seminggu.",
+  /*22*/ "Beragama Buddha (free space).", 
+  /*23*/ "Menjadi sukarelawan dalam acara kampus.",
+  /*24*/ "Mengikuti lomba menulis.", 
+
+  /*30*/ "Pernah memanjat gunung.",
+  /*31*/ "Menjadi kepala dalam acara.", 
+  /*32*/ "Memiliki hewan peliharaan kelinci.",
+  /*33*/ "Masuk ke dalam gedung perusahaan ternama.", 
+  /*34*/ "Mengikuti lomba fotografi.", 
+
+  /*40*/ "Pergi ke vihara di luar negeri.", 
+  /*41*/ "Pernah naik sepeda ke kampus.",
+  /*42*/ "Belajar alat musik baru dalam sebulan.", 
+  /*43*/ "Menjadi mentor untuk orang lain", 
+  /*44*/ "Menanam pohon atau berkebun di rumah.",
 ];
 
 const selected = [
@@ -117,7 +121,7 @@ export default function App() {
   //   const selected = localStorage.getItem("selected");
   //   const nama = localStorage.getItem("nama");
 
-  //   if (selected) {
+  //   if (selected)
   //     setSelectedState(JSON.parse(selected));
   //   }
   //   if (nama) {
@@ -211,7 +215,7 @@ export default function App() {
       <div className='absolute left-0 top-0 flex items-center justify-center bg-blue-300 shadow-lg rounded-lg w-dvw min-h-12 rounded-b-full pb-4'>
         <img src={Logo} alt='Logo KMBUI' className='h-12 w-12 mx-4' />
         <div>
-          <h1 className='text-2xl font-bold text-left'>Bingo Waisak KMBUI</h1>
+          <h1 className='text-2xl font-bold text-left'>Bingo RETT KMBUI</h1>
           <p className='text-left text-gray-500'>Klik kotak untuk menandai</p>
         </div>
       </div>
@@ -249,7 +253,7 @@ export default function App() {
         transition-all duration-200 ease-in-out transform hover:z-10 hover:shadow-lg
         border-2 border-blue-400
       '>
-          Dibutuhkan 3 Bingo untuk mendapatkan hadiah
+          Dibutuhkan 3 Bingo untuk menang
         </div>
       </div>
       <div className='w-full flex flex-col items-center rounded'>
